@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Event Handler</title>
+</head>
+<body>
+    <h1 id="h1">This is sejan</h1>
+    <input id="delete" type="text" placeholder="type delete">
+    <button id="d-button" disabled>Delete</button>
+</body>
+<!-- JS -->
+<script>
+    document.getElementById('d-button').addEventListener('click',function(){
+        document.getElementById('h1').style.display = "none";
+        console.log('sejan')
+    })
+    // focus
+    document.getElementById('delete').addEventListener('focus',function(){
+        document.body.style.backgroundColor = 'green'
+    })
+    // blur
+    document.getElementById('delete').addEventListener('blur',function(){
+        document.body.style.backgroundColor = 'red'
+    })
+    // keydown
+    // document.getElementById('delete').addEventListener('keydown',function(){
+    //     const deleteValue = document.getElementById('delete');
+    //     console.log(deleteValue.value)
+    // })
+
+     // keypress
+    // document.getElementById('delete').addEventListener('keypress',function(){
+    //     const deleV= document.getElementById('delete');
+    //     console.log(deleV.value)
+    // })
+    // keyUp beshi use hoi
+    // document.getElementById('delete').addEventListener('keyup',function(){
+    //     const deleteValue = document.getElementById('delete');
+    //     console.log(deleteValue.value)
+    // })
+
+    document.getElementById('delete').addEventListener('keyup',function(event){
+        const deleteValue = event.target.value
+        if (deleteValue=='delete'){
+            document.getElementById('d-button').removeAttribute('disabled');
+        }
+        else if (deleteValue!='delete'){
+            document.getElementById('d-button').setAttribute('disabled',true);
+        }
+        
+    })
+    // change beshi use hoi
+    document.getElementById('delete').addEventListener('change',function(){
+        const deleteValue = document.getElementById('delete');
+        console.log(deleteValue.value)
+    })
+
+</script>
+</html>

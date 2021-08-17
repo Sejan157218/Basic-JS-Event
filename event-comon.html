@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Comon</title>
+</head>
+<body>
+    <p id="p"></p>
+    <input id="text" type="text">
+    <button id="update">update</button>
+    <button id="uFuntion">using fuction</button>
+    <button id="dFuntion">direct funtion</button>
+
+    <script>
+        // using funtion
+        let usingFuntion = document.getElementById('uFuntion');
+            usingFuntion.onclick =usFuntion ;
+            function usFuntion(){
+             let p = document.getElementById('p');
+             console.log(p);
+                p.innerText='This button using function';
+            }
+
+        // direct function
+        document.getElementById('dFuntion').addEventListener('click',function(){
+            let p = document.getElementById('p');
+             console.log(p);
+                p.innerText='This button direct function';
+        })
+
+        //input text
+        document.getElementById('update').addEventListener('click',function(){
+            let text = document.getElementById('text');
+            let p = document.getElementById('p');
+             console.log(p);
+                p.innerText=text.value;
+                text.value = '';
+        })
+    </script>
+</body>
+</html>

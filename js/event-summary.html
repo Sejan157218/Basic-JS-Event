@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+</head>
+<body>
+    <input id="input1" type="text">
+    <button id="button1">Button1</button>
+    <input id="input2" type="text">
+    <button id="button2">Button2</button>
+
+    <button id="button3">Button1 + Button2</button>
+    <script>
+        // document.getElementById('button1').addEventListener('click',function(event){
+        // const input1 = document.getElementById('input1');
+        // const input1P = document.createElement('p');
+        // input1P.innerText = input1.value;
+        // input1.appendChild(input1P);
+        // console.log(input1.value)
+        // event.stopImmediatePropagation();
+        // })
+        // document.getElementById('button2').addEventListener('click',function(event){
+        // const input2 = document.getElementById('input2');
+        // const input2P = document.createElement('p');
+        // input2P.innerText = input2.value;
+        // input2.appendChild(input2P);
+        // console.log(input2.value)
+        // event.stopImmediatePropagation();
+        // })
+
+        document.getElementById('button3').addEventListener('click',function(){
+            const input1 = document.getElementById('input1');
+            const input1P = document.createElement('p');
+            input1P.innerText = input1.value;
+            input1.appendChild(input1P);
+
+            const input2 = document.getElementById('input2');
+            const input2P = document.createElement('p');
+            input2P.innerText = input2.value;
+            input2.appendChild(input2P);
+            
+           console.log(input1.value + input2.value)
+            
+        })
+    </script>
+</body>
+</html>

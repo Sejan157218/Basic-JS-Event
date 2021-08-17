@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliget Event Handler</title>
+</head>
+<body>
+    <h1>Deliget Event Handler</h1>
+    <section id="section">
+        <ul id="ul">
+            <li class="item">item-1</li>
+            <li class="item">item-2</li>
+            <li class="item">item-3</li>
+            <li class="item">item-4</li>
+            <li class="item">item-5</li>
+        </ul>
+        <button id="button">Add Button</button>
+    </section>
+    <script>
+        // const items =document.getElementsByClassName('item');
+        // for (let item of items){
+        //     item.addEventListener('click',function(){
+        //         const ul = document.getElementById('ul');
+        //         ul.removeChild(item);
+        //     })
+        // }
+
+        //  const items =document.getElementsByClassName('item');
+        // for (let item of items){
+        //     item.addEventListener('click',function(event){
+        //         event.target.parentNode.removeChild(event.target)
+                
+        //     })
+        // }
+        document.getElementById('button').addEventListener('click',function(){
+            const createLi = document.createElement('li');
+            createLi.innerText = 'new item';
+            const ul = document.getElementById('ul');
+            ul.appendChild(createLi);
+        })
+        document.getElementById('ul').addEventListener('click',function(event){
+            console.log(event.target);
+            event.target.parentNode.removeChild(event.target);
+        })
+
+    </script> 
+</body>
+</html>

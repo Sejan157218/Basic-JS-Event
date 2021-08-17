@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bublle Event Handler</title>
+</head>
+<body>
+    <h1>Bublle Event Handler</h1>
+    <section id="section">
+        <ul id="ul">
+            <li>item-1</li>
+            <li id="item-2">item-2</li>
+            <li>item-3</li>
+            <li>item-4</li>
+            <li>item-5</li>
+        </ul>
+    </section>
+    <script>
+        document.getElementById('item-2').addEventListener('click',function(event){
+            // console.log('this is item-2');
+            event.stopPropagation();           
+        })
+        document.getElementById('item-2').addEventListener('click',function(event){           
+            event.stopImmediatePropagation();
+        })
+        document.getElementById('ul').addEventListener('click',function(){
+            console.log('this is ul li item')
+        })
+        document.getElementById('section').addEventListener('click',function(){
+            console.log('this is section')
+        })
+    </script>
+</body>
+</html>

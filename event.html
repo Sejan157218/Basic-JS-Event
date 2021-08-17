@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Event</title>
+</head>
+<body>
+    <h1 onclick="console.log('Its for You')">This is Dom Event</h1>
+    <button onclick="alert('This is not for U')">click me</button>
+    <br>
+    <br>
+    <br>
+    <section>
+        <button onclick="document.body.style.backgroundColor='green'">click me : green</button>
+        <button onclick="makeRed()">click me : red</button>
+        <button id="click-blue">click me : blue</button>
+        <button id="click-yellow">click me : yellow</button>
+        <button id="click-goldenrod">click me : goldenrod</button>
+        <button id="click-black">click me : black</button>
+        <button id="click-indianred">click me : IndianRed</button>
+    </section>
+    <script src="js/event.js"></script>
+    <script>
+        let goldenrod = document.getElementById('click-goldenrod');
+        goldenrod.addEventListener('click',goldenrodbutton)
+        function goldenrodbutton(){
+            document.body.style.backgroundColor = "goldenrod";
+        }
+
+        let blue = document.getElementById('click-black');
+        blue.addEventListener('click',function(){
+            document.body.style.backgroundColor = "black";
+        })
+
+        let IndianRed = document.getElementById('click-indianred').addEventListener('click',function(){
+            document.body.style.backgroundColor = "indianred";
+        })
+
+
+    </script>
+</body>
+</html>
